@@ -1,6 +1,6 @@
 {
 	"name": "tinyrm",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"type": "commonjs",
 	"license": "MIT",
 	"description": "A tiny CLI tool to recursively remove files and directories",
