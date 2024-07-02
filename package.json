@@ -6,17 +6,19 @@
 	"description": "",
 	"main": "index.js",
 	"bin": {
-		"tinyrm": "./bin.js"
+		"tinyrm": "./dist/bin.js"
 	},
 	"engines": {
 		"node": ">=14.14"
 	},
 	"scripts": {
+		"build": "esbuild src/bin.js --bundle --platform=node --target=node14.14 --outfile=dist/bin.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [],
 	"author": "",
 	"devDependencies": {
+		"esbuild": "^0.23.0",
 		"prettier": "^3.3.2"
 	},
 	"prettier": {
