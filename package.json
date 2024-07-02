@@ -3,8 +3,8 @@
 	"version": "1.0.0",
 	"type": "module",
 	"license": "MIT",
-	"description": "",
-	"main": "index.js",
+	"description": "A tiny CLI tool to recursively remove files and directories",
+	"repository": "br0p0p/tinyrm",
 	"bin": {
 		"tinyrm": "./dist/bin.js"
 	},
@@ -13,10 +13,18 @@
 	},
 	"scripts": {
 		"build": "esbuild src/bin.js --bundle --platform=node --target=node14.14 --outfile=dist/bin.js",
+		"format": "prettier --write src *.md package.json",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"keywords": [],
-	"author": "",
+	"keywords": [
+		"del",
+		"premove",
+		"remove",
+		"rimraf"
+	],
+	"author": {
+		"name": "Caleb Williams"
+	},
 	"devDependencies": {
 		"esbuild": "^0.23.0",
 		"prettier": "^3.3.2"

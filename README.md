@@ -1,6 +1,6 @@
 # `tinyrm`
 
-> A tiny CLI tool to remove files and directories
+> A tiny CLI tool to recursively remove files and directories
 
 **This is a fork of [`premove`](https://github.com/lukeed/premove). Credit goes to that project for this CLI. This fork exists because Node v14.14 introduced `fs.rm()` and `fs.rmSync()`, providing the necessary deletion functionality out of the box. `premove` supports Node v6, which lacks these methods, so it implements them in userland. If you use Node v14.14 or later, the v6-compatible code is unnecessary.**
 
