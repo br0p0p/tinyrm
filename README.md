@@ -16,6 +16,11 @@ For programmatic deletion, use `fs.rm()` / `fs.rmSync()` or [`premove`](https://
   - the system root (`/`, `C:\\`, etc.)
   - items outside the `--cwd` path
 
+## Non-goals
+
+- Glob support
+- Backwards compatibility beyond Node v14.14
+
 ## Install
 
 ```sh
@@ -24,4 +29,17 @@ npm i -g tinyrm
 
 # Locally
 npm add -D tinyrm
+```
+
+## Usage
+
+```sh
+# Delete multiple files and directories
+tinyrm ./node_modules ./dist build.log
+
+# Specify the current working directory
+tinyrm ./somefiles --cwd ../otherproject
+
+# View the help information
+tinyrm --help
 ```

@@ -7,7 +7,7 @@ const argv = process.argv.slice(2);
 
 if (argv.includes("--help") || argv.includes("-h")) {
 	let msg = "\n  Description\n    Remove all items recursively\n";
-	msg += "\n  Usage\n    $ premove [options] [...paths]\n";
+	msg += "\n  Usage\n    $ tinyrm [options] [...paths]\n";
 	msg += "\n  Options";
 	msg += '\n    --cwd     Directory to resolve from (default ".")';
 	msg += "\n    --help    Displays this message\n";
