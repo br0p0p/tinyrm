@@ -18,7 +18,8 @@ For programmatic deletion, use `fs.rm()` / `fs.rmSync()` or [`premove`](https://
 
 ## Non-goals
 
-- Backwards compatibility beyond Node v14.14
+- Glob support
+- Backwards compatibility before Node v14.14
 
 ## Install
 
