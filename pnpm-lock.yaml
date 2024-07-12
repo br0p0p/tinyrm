@@ -7,6 +7,13 @@ settings:
 importers:
 
   .:
+    dependencies:
+      fdir:
+        specifier: ^6.1.1
+        version: 6.1.1(picomatch@4.0.2)
+      picomatch:
+        specifier: ^4.0.2
+        version: 4.0.2
     devDependencies:
       esbuild:
         specifier: ^0.23.0
@@ -166,6 +173,18 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
+  fdir@6.1.1:
+    resolution: {integrity: sha512-QfKBVg453Dyn3mr0Q0O+Tkr1r79lOTAKSi9f/Ot4+qVEwxWhav2Z+SudrG9vQjM2aYRMQQZ2/Q1zdA8ACM1pDg==}
+    peerDependencies:
+      picomatch: 3.x
+    peerDependenciesMeta:
+      picomatch:
+        optional: true
+
+  picomatch@4.0.2:
+    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
+    engines: {node: '>=12'}
+
   prettier@3.3.2:
     resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
     engines: {node: '>=14'}
@@ -271,5 +290,11 @@ snapshots:
       '@esbuild/win32-arm64': 0.23.0
       '@esbuild/win32-ia32': 0.23.0
       '@esbuild/win32-x64': 0.23.0
+
+  fdir@6.1.1(picomatch@4.0.2):
+    optionalDependencies:
+      picomatch: 4.0.2
+
+  picomatch@4.0.2: {}
 
   prettier@3.3.2: {}

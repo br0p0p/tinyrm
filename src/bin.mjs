@@ -2,6 +2,7 @@
 import { homedir } from "node:os";
 import { normalize, resolve } from "node:path";
 import { rmSync } from "node:fs";
+import { fdir } from "fdir";
 
 const argv = process.argv.slice(2);
 
@@ -16,7 +17,7 @@ if (argv.includes("--help") || argv.includes("-h")) {
 }
 
 let cwd = resolve(".");
-let idx = argv.indexOf("--cwd");
+const idx = argv.indexOf("--cwd");
 
 if (idx !== -1) {
 	let num = 1;
@@ -32,7 +33,7 @@ const isRoot = /^(\/|[a-zA-Z]:\\)$/;
 
 let i = 0,
 	tmp,
-	dirs = [];
+	globs = [];
 
 for (; i < argv.length; i++) {
 	tmp = argv[i];
@@ -55,11 +56,18 @@ for (; i < argv.length; i++) {
 		continue;
 	}
 
-	dirs.push(tmp);
+	globs.push(argv[i].endsWith("/**") ? argv[i].slice(0, -3) + "/" : argv[i]);
 }
 
-dirs.sort(); // length
+const crawler = new fdir()
+	.withBasePath()
+	.withDirs()
+	.globWithOptions(globs, { cwd, dot: true, ignore: [home] });
 
-for (i = 0; i < dirs.length; ) {
-	rmSync(dirs[i++], { recursive: true, force: true });
+const matches = crawler.crawl(cwd).sync();
+
+matches.sort(); // length
+
+for (i = 0; i < matches.length; ) {
+	rmSync(matches[i++], { recursive: true, force: true });
 }
